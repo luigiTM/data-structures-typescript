@@ -1,136 +1,111 @@
 # Data Structures and Algorithms in TypeScript
 
-This project implements fundamental data structures and sorting algorithms in TypeScript. It serves as an educational resource for understanding core computer science concepts through practical implementations.
+This project implements fundamental data structures and sorting algorithms in TypeScript. It is an educational codebase for practicing classic computer science concepts with small, direct implementations.
 
-## Data Structures Implemented
+## Data Structures
 
-### 1. Array (Vetor)
+### Array
 
-- Basic array implementation with dynamic operations
-- Features:
-  - Insertion
-  - Deletion
-  - Search
-  - Display operations
-  - Size tracking
+- Implemented by `ArrayStructure`
+- Supports insertion, removal, search, display, and size tracking
 
-### 2. Ordered Array (Vetor Ordenado)
+### Ordered Array
 
-- An array that maintains elements in sorted order
-- Implements binary search for efficient lookups
+- Implemented by `OrderedArray`
+- Maintains values in sorted order as they are inserted
+- Uses binary search for lookups
 
-### 3. Stack (Pilha)
+### Stack
 
-- Classic LIFO (Last-In-First-Out) data structure
-- Operations:
-  - Push (`colocar`)
-  - Pop (`retirar`)
-  - Peek (`espiar`)
-  - Empty check
-  - Full check
+- Implemented by `Stack`
+- Classic LIFO data structure
+- Supports `push`, `pop`, `peek`, `isEmpty`, and `isFull`
 
-### 4. Queue (Fila)
+### Queue
 
-- FIFO (First-In-First-Out) implementation
-- Features:
-  - Enqueue (`inserir`)
-  - Dequeue (`remover`)
-  - Peek front element (`espiarInicio`)
-  - Empty/Full checks
-  - Size tracking
+- Implemented by `Queue`
+- Classic FIFO data structure
+- Supports `enqueue`, `dequeue`, `peekFront`, `isEmpty`, `isFull`, and `size`
 
-### 5. Linked List (Lista Encadeada)
+### Linked List
 
-- Singly linked list implementation
-- Operations:
-  - Insert at front
-  - Remove from front
-  - Display list
-  - Empty check
-- Uses a separate `Link` class for nodes
+- Implemented by `LinkedList`
+- Singly linked list using the `Link` class for nodes
+- Supports `insertFirst`, `deleteFirst`, `displayList`, and `isEmpty`
 
 ## Sorting Algorithms
 
-The project includes three classic sorting algorithm implementations:
+### Bubble Sort
 
-### 1. Bubble Sort (Método Bolha)
+- Implemented by `BubbleSortArray`
+- Repeatedly compares adjacent elements and swaps them when they are out of order
+- Time complexity: O(n²)
 
-- Implementation in `VetorBolha` class
-- Repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order
-- Time Complexity: O(n²)
+### Selection Sort
 
-### 2. Selection Sort (Ordenação por Seleção)
+- Implemented by `SelectionSortArray`
+- Repeatedly selects the smallest item from the unsorted region
+- Time complexity: O(n²)
 
-- Implementation in `VetorSelecao` class
-- Divides the input into a sorted and an unsorted region
-- Repeatedly selects the smallest element from the unsorted region
-- Time Complexity: O(n²)
+### Insertion Sort
 
-### 3. Insertion Sort (Ordenação por Inserção)
-
-- Implementation in `VetorInsercao` class
-- Builds the final sorted array one item at a time
-- Efficient for small data sets and nearly sorted arrays
-- Time Complexity: O(n²)
+- Implemented by `InsertionSortArray`
+- Builds the sorted array one item at a time
+- Time complexity: O(n²)
 
 ## Project Structure
 
-```
+```text
 src/
-├── app.ts                     # Main application entry point
-├── fila/                      # Queue implementation
-├── lista-encadeada/          # Linked List implementation
-├── ordenacao-simples/        # Simple sorting algorithms
-│   ├── metodo-bolha/         # Bubble Sort
-│   ├── ordenacao-insercao/   # Insertion Sort
-│   └── ordenacao-selecao/    # Selection Sort
-├── pilha/                    # Stack implementation
-├── vetor/                    # Array implementation
-└── vetor-ordenado/          # Ordered array implementation
+├── app.ts
+├── array/
+│   └── array-structure.ts
+├── linked-list/
+│   ├── link.ts
+│   └── linked-list.ts
+├── ordered-array/
+│   └── ordered-array.ts
+├── queue/
+│   └── queue.ts
+├── simple-sorting/
+│   ├── bubble-sort/
+│   │   └── bubble-sort-array.ts
+│   ├── insertion-sort/
+│   │   └── insertion-sort-array.ts
+│   └── selection-sort/
+│       └── selection-sort-array.ts
+├── stack/
+│   └── stack.ts
+└── tests/
+    ├── array.test.ts
+    ├── linked-list.test.ts
+    ├── ordered-array.test.ts
+    ├── queue.test.ts
+    ├── sorting.test.ts
+    └── stack.test.ts
 ```
-
-## Technical Details
-
-- Written in TypeScript
-- Each data structure and algorithm has its own implementation file and demo application
-- Includes test cases and example usage
-- Clean, well-documented code with clear method names in Portuguese
-
-## Usage
-
-Each data structure and algorithm comes with an accompanying application file (`*-app.ts`) that demonstrates its usage. These files contain example code showing how to:
-
-- Initialize the data structure
-- Perform basic operations
-- Test different scenarios
-- Display results
-
-## Educational Value
-
-This project is particularly useful for:
-
-- Learning fundamental data structures
-- Understanding basic sorting algorithms
-- Studying TypeScript implementations of classic CS concepts
-- Practicing with different data structure operations
 
 ## Development
 
-The project uses TypeScript and includes proper configuration for development. To get started:
-
-1. Install dependencies:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-2. Run TypeScript compiler:
+Build the project:
 
 ```bash
 npm run build
 ```
 
-3. Execute the examples:
+Run the Jest test suite:
+
+```bash
+npm test
+```
+
+Run the application entry point:
 
 ```bash
 npm start
