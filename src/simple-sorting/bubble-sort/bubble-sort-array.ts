@@ -5,6 +5,7 @@ export class BubbleSortArray {
 
     constructor(size: number) {
         this.items = new Array<number>(size);
+        // count is the active length; the rest is unused capacity.
         this.count = 0;
     }
 
@@ -23,6 +24,7 @@ export class BubbleSortArray {
     bubbleSort() {
         let front: number;
         let back: number;
+        // Each pass bubbles the largest remaining value toward the back.
         for (back = this.count - 1; back > 1; back--) {
             for (front = 0; front < back; front++) {
                 if (this.items[front] > this.items[front + 1]) {
@@ -33,6 +35,7 @@ export class BubbleSortArray {
     }
 
     swap(index: number, otherIndex: number) {
+        // Swap two positions without losing either value.
         let temporary = this.items[index];
         this.items[index] = this.items[otherIndex];
         this.items[otherIndex] = temporary;

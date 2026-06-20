@@ -5,6 +5,7 @@ export class SelectionSortArray {
 
     constructor(size: number) {
         this.items = new Array<number>(size);
+        // count is the active length; the rest is unused capacity.
         this.count = 0;
     }
 
@@ -24,6 +25,7 @@ export class SelectionSortArray {
         let front: number;
         let back: number;
         let minimum: number;
+        // Select the smallest remaining value for each position.
         for (back = 0; back < this.count; back++) {
             minimum = back;
             for (front = back + 1; front < this.count; front++) {
@@ -36,6 +38,7 @@ export class SelectionSortArray {
     }
 
     swap(index: number, otherIndex: number) {
+        // Swap two positions without losing either value.
         let temporary = this.items[index];
         this.items[index] = this.items[otherIndex];
         this.items[otherIndex] = temporary;
